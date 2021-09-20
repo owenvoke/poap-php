@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use OwenVoke\POAP\Api\Event;
 
-beforeEach(fn () => $this->apiClass = Event::class);
+beforeEach(fn() => $this->apiClass = Event::class);
 
 $singleEventData = [
     'id' => 7811,
@@ -71,4 +71,18 @@ it('should get an event by its slug', function () use ($singleEventData) {
         ->willReturn($singleEventData);
 
     expect($api->showBySlug('pest-php-meetup-1-2021'))->toBe($singleEventData);
+});
+
+it('should validate an events secret code', function () {
+    $api = $this->getApiMock();
+
+    $api->expects($this->once())
+        ->method('post')
+        ->with('/events/validate', [
+            'event_id' => 7811,
+            'secret_code' => '123456',
+        ])
+        ->willReturn(['valid' => true]);
+
+    expect($api->validate(7811, '123456'))->toBe(['valid' => true]);
 });
