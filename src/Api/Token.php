@@ -10,4 +10,14 @@ class Token extends AbstractApi
     {
         return $this->get("/token/{$id}");
     }
+
+    public function image(int $id): string
+    {
+        return $this->get("/token/{$id}/image");
+    }
+
+    public function metadata(int $eventId, int $tokenId): array
+    {
+        return $this->get("/metadata/{$eventId}/{$tokenId}");
+    }
 }
