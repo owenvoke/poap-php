@@ -81,14 +81,14 @@ Read more about Treeware at [treeware.earth][link-treeware].
 [ico-version]: https://img.shields.io/packagist/v/owenvoke/poap.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
 [ico-github-actions]: https://img.shields.io/github/workflow/status/owenvoke/poap-php/Tests.svg?style=flat-square
-[ico-styleci]: https://styleci.io/repos/000000/shield
+[ico-styleci]: https://styleci.io/repos/408398036/shield
 [ico-downloads]: https://img.shields.io/packagist/dt/owenvoke/poap.svg?style=flat-square
 [ico-treeware-gifting]: https://img.shields.io/badge/Treeware-%F0%9F%8C%B3-lightgreen?style=flat-square
 
 [link-poap]: https://poap.xyz
 [link-packagist]: https://packagist.org/packages/owenvoke/poap
 [link-github-actions]: https://github.com/owenvoke/poap-php/actions
-[link-styleci]: https://styleci.io/repos/000000
+[link-styleci]: https://styleci.io/repos/408398036
 [link-downloads]: https://packagist.org/packages/owenvoke/poap
 [link-treeware]: https://treeware.earth
 [link-treeware-gifting]: https://ecologi.com/owenvoke?gift-trees
