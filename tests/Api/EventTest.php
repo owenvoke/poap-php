@@ -40,6 +40,17 @@ https://youtu.be/q_8kRlAIyms",
     "event_host_id" => 0
 ];
 
+it('should get all events', function () use ($singleEventData) {
+    $api = $this->getApiMock();
+
+    $api->expects($this->once())
+        ->method('get')
+        ->with('/events')
+        ->willReturn([$singleEventData]);
+
+    expect($api->all())->toBe([$singleEventData]);
+});
+
 it('should get an event by its id', function () use ($singleEventData) {
     $api = $this->getApiMock();
 
