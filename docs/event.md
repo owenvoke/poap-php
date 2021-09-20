@@ -4,6 +4,12 @@
 
 Allows interacting with the Event API.
 
+### Get a list of all events
+
+```php
+$response = $client->event()->all();
+```
+
 ### Get details about a POAP event
 
 ```php

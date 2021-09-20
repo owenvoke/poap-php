@@ -11,6 +11,7 @@ use Http\Client\Common\Plugin\RedirectPlugin;
 use Http\Discovery\Psr17FactoryDiscovery;
 use OwenVoke\POAP\Api\AbstractApi;
 use OwenVoke\POAP\Api\Account;
+use OwenVoke\POAP\Api\Delivery;
 use OwenVoke\POAP\Api\Event;
 use OwenVoke\POAP\Api\Token;
 use OwenVoke\POAP\Exception\BadMethodCallException;
@@ -22,6 +23,8 @@ use Psr\Http\Client\ClientInterface;
 /**
  * @method Api\Account account()
  * @method Api\Account accounts()
+ * @method Api\Delivery delivery()
+ * @method Api\Delivery deliveries()
  * @method Api\Event event()
  * @method Api\Event events()
  * @method Api\Token token()
@@ -60,6 +63,10 @@ final class Client
             case 'account':
             case 'accounts':
                 return new Account($this);
+
+            case 'delivery':
+            case 'deliveries':
+                return new Delivery($this);
 
             case 'event':
             case 'events':
