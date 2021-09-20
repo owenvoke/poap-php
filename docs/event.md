@@ -10,7 +10,6 @@ Allows interacting with the Event API.
 $response = $client->event()->show(7811);
 ```
 
-
 ### Get details about a POAP event by its slug
 
 ```php

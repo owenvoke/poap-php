@@ -11,6 +11,7 @@ use Http\Client\Common\Plugin\RedirectPlugin;
 use Http\Discovery\Psr17FactoryDiscovery;
 use OwenVoke\POAP\Api\AbstractApi;
 use OwenVoke\POAP\Api\Event;
+use OwenVoke\POAP\Api\Token;
 use OwenVoke\POAP\Exception\BadMethodCallException;
 use OwenVoke\POAP\Exception\InvalidArgumentException;
 use OwenVoke\POAP\HttpClient\Builder;
@@ -20,6 +21,8 @@ use Psr\Http\Client\ClientInterface;
 /**
  * @method Api\Event event()
  * @method Api\Event events()
+ * @method Api\Token token()
+ * @method Api\Token tokens()
  */
 final class Client
 {
@@ -54,6 +57,10 @@ final class Client
             case 'event':
             case 'events':
                 return new Event($this);
+
+            case 'token':
+            case 'tokens':
+                return new Token($this);
 
             default:
                 throw new InvalidArgumentException(sprintf('Undefined api instance called: "%s"', $name));
