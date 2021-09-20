@@ -21,3 +21,9 @@ $response = $client->event()->show(7811);
 ```php
 $response = $client->event()->showBySlug('pest-php-meetup-1-2021');
 ```
+
+### Validate an events secret code
+
+```php
+$response = $client->event()->validate(7811, '123456');
+```
