@@ -46,7 +46,7 @@ it('should get an event by its id', function () use ($singleEventData) {
     $api->expects($this->once())
         ->method('get')
         ->with('/events/id/7811')
-        ->will($this->returnValue($singleEventData));
+        ->willReturn($singleEventData);
 
     expect($api->show(7811))->toBe($singleEventData);
 });
@@ -57,7 +57,7 @@ it('should get an event by its slug', function () use ($singleEventData) {
     $api->expects($this->once())
         ->method('get')
         ->with('/events/pest-php-meetup-1-2021')
-        ->will($this->returnValue($singleEventData));
+        ->willReturn($singleEventData);
 
     expect($api->showBySlug('pest-php-meetup-1-2021'))->toBe($singleEventData);
 });

@@ -51,7 +51,7 @@ it('should get a token by its id', function () use ($singleTokenData) {
     $api->expects($this->once())
         ->method('get')
         ->with('/token/1310287')
-        ->will($this->returnValue($singleTokenData));
+        ->willReturn($singleTokenData);
 
     expect($api->show(1310287))->toBe($singleTokenData);
 });
