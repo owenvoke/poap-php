@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use OwenVoke\POAP\Api\Website;
 
-beforeEach(fn() => $this->apiClass = Website::class);
+beforeEach(fn () => $this->apiClass = Website::class);
 
 it('should get a website by its id', function () {
     $singleWebsiteData = [
