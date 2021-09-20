@@ -29,7 +29,7 @@ class Token extends AbstractApi
             'qr_hash' => $code,
         ]);
 
-        if (!$response['secret']) {
+        if (! $response['secret']) {
             throw new InvalidArgumentException('A secret could not be retrieved from the provided code');
         }
 
@@ -37,7 +37,7 @@ class Token extends AbstractApi
             throw new InvalidArgumentException('The provided code has already been claimed');
         }
 
-        if (!$response['active']) {
+        if (! $response['active']) {
             throw new InvalidArgumentException('The provided code is no longer active');
         }
 

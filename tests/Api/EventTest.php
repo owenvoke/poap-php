@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use OwenVoke\POAP\Api\Event;
 
-beforeEach(fn() => $this->apiClass = Event::class);
+beforeEach(fn () => $this->apiClass = Event::class);
 
 $singleEventData = [
     'id' => 7811,

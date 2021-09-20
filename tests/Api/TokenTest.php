@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use OwenVoke\POAP\Api\Token;
 
-beforeEach(fn() => $this->apiClass = Token::class);
+beforeEach(fn () => $this->apiClass = Token::class);
 
 $singleTokenData = [
     'event' => [
@@ -58,7 +58,7 @@ it('should get a token by its id', function () use ($singleTokenData) {
 
 it('should get a tokens metadata', function () {
     $metadata = [
-        "description" => "PEST Meetup #1: Testing Livewire with PEST & You know the REST, now it's time for Pest
+        'description' => "PEST Meetup #1: Testing Livewire with PEST & You know the REST, now it's time for Pest
 
 Schedule:
 6:00 PM - Intro
@@ -74,41 +74,41 @@ Schedule:
 Pest is an elegant PHP Testing Framework with a focus on simplicity. It was carefully crafted to bring the joy of testing to PHP.
 
 https://youtu.be/q_8kRlAIyms",
-        "external_url" => "https://api.poap.xyz/metadata/7811/1310287",
-        "home_url" => "https://app.poap.xyz/token/1310287",
-        "image_url" => "https://storage.googleapis.com/poapmedia/pest-php-meetup-1-2021-logo-1631810734471.png",
-        "name" => "Pest PHP Meetup #1",
-        "year" => 2021,
-        "tags" => [
-            "poap",
-            "event"
+        'external_url' => 'https://api.poap.xyz/metadata/7811/1310287',
+        'home_url' => 'https://app.poap.xyz/token/1310287',
+        'image_url' => 'https://storage.googleapis.com/poapmedia/pest-php-meetup-1-2021-logo-1631810734471.png',
+        'name' => 'Pest PHP Meetup #1',
+        'year' => 2021,
+        'tags' => [
+            'poap',
+            'event',
         ],
-        "attributes" => [
+        'attributes' => [
             [
-                "trait_type" => "startDate",
-                "value" => "22-Jun-2021"
+                'trait_type' => 'startDate',
+                'value' => '22-Jun-2021',
             ],
             [
-                "trait_type" => "endDate",
-                "value" => "22-Jun-2021"
+                'trait_type' => 'endDate',
+                'value' => '22-Jun-2021',
             ],
             [
-                "trait_type" => "virtualEvent",
-                "value" => "true"
+                'trait_type' => 'virtualEvent',
+                'value' => 'true',
             ],
             [
-                "trait_type" => "city",
-                "value" => ""
+                'trait_type' => 'city',
+                'value' => '',
             ],
             [
-                "trait_type" => "country",
-                "value" => ""
+                'trait_type' => 'country',
+                'value' => '',
             ],
             [
-                "trait_type" => "eventURL",
-                "value" => "https://pestphp.com"
-            ]
-        ]
+                'trait_type' => 'eventURL',
+                'value' => 'https://pestphp.com',
+            ],
+        ],
     ];
 
     $api = $this->getApiMock();

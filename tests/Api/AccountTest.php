@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use OwenVoke\POAP\Api\Account;
 
-beforeEach(fn() => $this->apiClass = Account::class);
+beforeEach(fn () => $this->apiClass = Account::class);
 
 $singleAccountData = [
     [
