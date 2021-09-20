@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use OwenVoke\POAP\Api\Account;
 
-beforeEach(fn () => $this->apiClass = Account::class);
+beforeEach(fn() => $this->apiClass = Account::class);
 
 $singleAccountData = [
     [
@@ -44,7 +44,7 @@ https://youtu.be/q_8kRlAIyms",
     ],
 ];
 
-it('should get a user by their ETH address or ENS name', function () use ($singleAccountData) {
+it('should get a users POAPs by their ETH address or ENS name', function () use ($singleAccountData) {
     $api = $this->getApiMock();
 
     $api->expects($this->once())
@@ -53,4 +53,44 @@ it('should get a user by their ETH address or ENS name', function () use ($singl
         ->willReturn($singleAccountData);
 
     expect($api->showByAddressOrEnsName('0x3ab56c8a5E4B307A60b6A769B1C083EE165d6dd6'))->toBe($singleAccountData);
+});
+
+it('should get a users ETH address by their ENS name', function () {
+    $api = $this->getApiMock();
+
+    $api->expects($this->once())
+        ->method('get')
+        ->with('/actions/ens_resolve', [
+            'name' => 'voke.eth',
+        ])
+        ->willReturn([
+            'valid' => true,
+            'address' => '0x3ab56c8a5E4B307A60b6A769B1C083EE165d6dd6',
+            'ens' => 'voke.eth',
+        ]);
+
+    expect($api->ensNameToAddress('voke.eth'))->toBe([
+        'valid' => true,
+        'address' => '0x3ab56c8a5E4B307A60b6A769B1C083EE165d6dd6',
+        'ens' => 'voke.eth',
+    ]);
+});
+
+it('should get a users ENS name by their ETH address', function () {
+    $api = $this->getApiMock();
+
+    $api->expects($this->once())
+        ->method('get')
+        ->with('/actions/ens_lookup/0x3ab56c8a5E4B307A60b6A769B1C083EE165d6dd6')
+        ->willReturn([
+            'valid' => true,
+            'address' => '0x3ab56c8a5E4B307A60b6A769B1C083EE165d6dd6',
+            'ens' => 'voke.eth',
+        ]);
+
+    expect($api->addressToEnsName('0x3ab56c8a5E4B307A60b6A769B1C083EE165d6dd6'))->toBe([
+        'valid' => true,
+        'address' => '0x3ab56c8a5E4B307A60b6A769B1C083EE165d6dd6',
+        'ens' => 'voke.eth',
+    ]);
 });
