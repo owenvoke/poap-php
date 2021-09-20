@@ -21,3 +21,12 @@ $response = $client->token()->image(1310287);
 ```php
 $response = $client->token()->metadata(7811, 1310287);
 ```
+
+### Claim a POAP token code
+
+```php
+$response = $client->token()->claim(
+    'abcdef',
+    '0x3ab56c8a5E4B307A60b6A769B1C083EE165d6dd6'
+);
+```
