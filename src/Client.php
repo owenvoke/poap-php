@@ -14,6 +14,7 @@ use OwenVoke\POAP\Api\Account;
 use OwenVoke\POAP\Api\Delivery;
 use OwenVoke\POAP\Api\Event;
 use OwenVoke\POAP\Api\Token;
+use OwenVoke\POAP\Api\Website;
 use OwenVoke\POAP\Exception\BadMethodCallException;
 use OwenVoke\POAP\Exception\InvalidArgumentException;
 use OwenVoke\POAP\HttpClient\Builder;
@@ -29,6 +30,8 @@ use Psr\Http\Client\ClientInterface;
  * @method Api\Event events()
  * @method Api\Token token()
  * @method Api\Token tokens()
+ * @method Api\Website website()
+ * @method Api\Website websites()
  */
 final class Client
 {
@@ -75,6 +78,10 @@ final class Client
             case 'token':
             case 'tokens':
                 return new Token($this);
+
+            case 'website':
+            case 'websites':
+                return new Website($this);
 
             default:
                 throw new InvalidArgumentException(sprintf('Undefined api instance called: "%s"', $name));
