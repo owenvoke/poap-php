@@ -10,12 +10,17 @@ use Http\Client\Common\Plugin\HeaderDefaultsPlugin;
 use Http\Client\Common\Plugin\RedirectPlugin;
 use Http\Discovery\Psr17FactoryDiscovery;
 use OwenVoke\POAP\Api\AbstractApi;
+use OwenVoke\POAP\Api\Event;
 use OwenVoke\POAP\Exception\BadMethodCallException;
 use OwenVoke\POAP\Exception\InvalidArgumentException;
 use OwenVoke\POAP\HttpClient\Builder;
 use OwenVoke\POAP\HttpClient\Plugin\Authentication;
 use Psr\Http\Client\ClientInterface;
 
+/**
+ * @method Api\Event event()
+ * @method Api\Event events()
+ */
 final class Client
 {
     public const AUTH_ACCESS_TOKEN = 'access_token_header';
@@ -46,6 +51,10 @@ final class Client
     public function api(string $name): AbstractApi
     {
         switch ($name) {
+            case 'event':
+            case 'events':
+                return new Event($this);
+
             default:
                 throw new InvalidArgumentException(sprintf('Undefined api instance called: "%s"', $name));
         }
