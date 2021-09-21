@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 ## Unreleased
 
+## [v1.1.0 - 2021-09-21](https://github.com/owenvoke/poap-php/compare/v1.0.0...v1.1.0)
+
+### Added
+- Add a new `Token::getClaimSecret()` method ([`87cfecb`](https://github.com/owenvoke/poap-php/commit/87cfecbef6478150548ee00fde8f05dab3054139))
+
 ## v1.0.0 - 2021-09-20
 
 ### Added
