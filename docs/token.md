@@ -30,3 +30,11 @@ $response = $client->token()->claim(
     '0x3ab56c8a5E4B307A60b6A769B1C083EE165d6dd6'
 );
 ```
+
+### Get the secret for a POAP token code
+
+```php
+$response = $client->token()->claimSecret(
+    'abcdef'
+);
+```

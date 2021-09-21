@@ -25,9 +25,24 @@ class Token extends AbstractApi
 
     public function claim(string $code, string $address): array
     {
+        $secret = $this->claimSecret($code);
+
+        return $this->post('/actions/claim-qr', [
+            'address' => $address,
+            'qr_hash' => $code,
+            'secret' => $secret,
+        ]);
+    }
+
+    public function claimSecret(string $code): string
+    {
         $response = $this->get('/actions/claim-qr', [
             'qr_hash' => $code,
         ]);
+
+        if (! isset($response['secret'], $response['claimed'], $response['is_active'])) {
+            throw new InvalidArgumentException('The required response values could not be found');
+        }
 
         if (! $response['secret']) {
             throw new InvalidArgumentException('A secret could not be retrieved from the provided code');
@@ -37,14 +52,10 @@ class Token extends AbstractApi
             throw new InvalidArgumentException('The provided code has already been claimed');
         }
 
-        if (! $response['active']) {
+        if (! $response['is_active']) {
             throw new InvalidArgumentException('The provided code is no longer active');
         }
 
-        return $this->post('/actions/claim-qr', [
-            'address' => $address,
-            'qr_hash' => $code,
-            'secret' => $response['secret'],
-        ]);
+        return $response['secret'];
     }
 }
