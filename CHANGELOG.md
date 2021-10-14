@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 ## Unreleased
 
+## [v1.2.0 - 2021-10-14](https://github.com/owenvoke/poap-php/compare/v1.1.0...v1.2.0)
+
+### Added
+- Add support for creating new Events ([#2](https://github.com/owenvoke/poap-php/pull/2))
+
 ## [v1.1.0 - 2021-09-21](https://github.com/owenvoke/poap-php/compare/v1.0.0...v1.1.0)
 
 ### Added
