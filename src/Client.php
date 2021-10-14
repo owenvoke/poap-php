@@ -117,7 +117,7 @@ final class Client
         return $this->getHttpClientBuilder()->getHttpClient();
     }
 
-    protected function getHttpClientBuilder(): Builder
+    public function getHttpClientBuilder(): Builder
     {
         return $this->httpClientBuilder;
     }
