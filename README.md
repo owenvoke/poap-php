@@ -20,7 +20,7 @@ An object oriented PHP wrapper for the [POAP][link-poap] API
 Via Composer
 
 ```shell
-composer require owenvoke/poap guzzlehttp/guzzle:^7.0.1 http-interop/http-factory-guzzle:^1.0
+composer require owenvoke/poap guzzlehttp/guzzle:^7.4 http-interop/http-factory-guzzle:^1.2
 ```
 
 We are decoupled from any HTTP messaging client with help by [HTTPlug](https://httplug.io).
