@@ -43,7 +43,7 @@ final class Authentication implements Plugin
     {
         switch ($this->method) {
             case Client::AUTH_ACCESS_TOKEN:
-                return sprintf('Bearer %s', $this->tokenOrLogin);
+                return $this->tokenOrLogin;
             default:
                 throw new RuntimeException(sprintf('%s not yet implemented', $this->method));
         }

@@ -41,6 +41,16 @@ $client = new \OwenVoke\POAP\Client();
 $repositories = $client->event()->showBySlug('pest-php-meetup-1-2021');
 ```
 
+**Authentication**
+
+> Note: The POAP API only supports authentication via an API token.
+
+```php
+use OwenVoke\POAP\Client;
+$client = new Client();
+$client->authenticate($apiToken, null, Client::AUTH_ACCESS_TOKEN);
+```
+
 ## Change log
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
