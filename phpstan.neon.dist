@@ -8,6 +8,7 @@ parameters:
   reportUnmatchedIgnoredErrors: true
 
   ignoreErrors:
-  # Ignore typehint errors on api classes
-  - message: '#Method (.*) has no return typehint specified\.#'
-    path: src/Api
+  - message: '#Property (.*) is never read, only written\.#'
+    path: src/HttpClient/
+  - message: '#Variable \$parameters in empty\(\) always exists and is not falsy\.#'
+    path: src/Api/AbstractApi.php

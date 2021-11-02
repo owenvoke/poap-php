@@ -26,7 +26,7 @@ abstract class AbstractApi
         return $this->client;
     }
 
-    public function configure()
+    public function configure(): self
     {
         return $this;
     }
