@@ -55,6 +55,23 @@ it('should get a users POAPs by their ETH address or ENS name', function () use 
     expect($api->showByAddressOrEnsName('0x3ab56c8a5E4B307A60b6A769B1C083EE165d6dd6'))->toBe($singleAccountData);
 });
 
+it('should check that an ETH address or ENS name owns a token for an event', function () {
+    $expectedArray = [
+        'tokenId' => 123456,
+        'owner' => '0x3ab56c8a5E4B307A60b6A769B1C083EE165d6dd6',
+        // ...
+    ];
+
+    $api = $this->getApiMock();
+
+    $api->expects($this->once())
+        ->method('get')
+        ->with('/actions/scan/0x3ab56c8a5E4B307A60b6A769B1C083EE165d6dd6/123456')
+        ->willReturn($expectedArray);
+
+    expect($api->ownsEventToken('0x3ab56c8a5E4B307A60b6A769B1C083EE165d6dd6', 123456))->toBe($expectedArray);
+});
+
 it('should get a users ETH address by their ENS name', function () {
     $api = $this->getApiMock();
 
