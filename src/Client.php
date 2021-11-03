@@ -14,6 +14,7 @@ use OwenVoke\POAP\Api\Account;
 use OwenVoke\POAP\Api\Checkout;
 use OwenVoke\POAP\Api\Delivery;
 use OwenVoke\POAP\Api\Event;
+use OwenVoke\POAP\Api\Queue;
 use OwenVoke\POAP\Api\Token;
 use OwenVoke\POAP\Api\Website;
 use OwenVoke\POAP\Exception\BadMethodCallException;
@@ -23,17 +24,20 @@ use OwenVoke\POAP\HttpClient\Plugin\Authentication;
 use Psr\Http\Client\ClientInterface;
 
 /**
- * @method Api\Account account()
- * @method Api\Account accounts()
- * @method Api\Checkout checkout()
- * @method Api\Checkout checkouts()
- * @method Api\Delivery deliveries()
- * @method Api\Event event()
- * @method Api\Event events()
- * @method Api\Token token()
- * @method Api\Token tokens()
- * @method Api\Website website()
- * @method Api\Website websites()
+ * @method Account account()
+ * @method Account accounts()
+ * @method Checkout checkout()
+ * @method Checkout checkouts()
+ * @method Delivery delivery()
+ * @method Delivery deliveries()
+ * @method Event event()
+ * @method Event events()
+ * @method Queue queue()
+ * @method Queue queues()
+ * @method Token token()
+ * @method Token tokens()
+ * @method Website website()
+ * @method Website websites()
  */
 final class Client
 {
@@ -80,6 +84,10 @@ final class Client
             case 'event':
             case 'events':
                 return new Event($this);
+
+            case 'queue':
+            case 'queues':
+                return new Queue($this);
 
             case 'token':
             case 'tokens':
