@@ -11,6 +11,7 @@ use Http\Client\Common\Plugin\RedirectPlugin;
 use Http\Discovery\Psr17FactoryDiscovery;
 use OwenVoke\POAP\Api\AbstractApi;
 use OwenVoke\POAP\Api\Account;
+use OwenVoke\POAP\Api\Checkout;
 use OwenVoke\POAP\Api\Delivery;
 use OwenVoke\POAP\Api\Event;
 use OwenVoke\POAP\Api\Token;
@@ -24,7 +25,8 @@ use Psr\Http\Client\ClientInterface;
 /**
  * @method Api\Account account()
  * @method Api\Account accounts()
- * @method Api\Delivery delivery()
+ * @method Api\Checkout checkout()
+ * @method Api\Checkout checkouts()
  * @method Api\Delivery deliveries()
  * @method Api\Event event()
  * @method Api\Event events()
@@ -66,6 +68,10 @@ final class Client
             case 'account':
             case 'accounts':
                 return new Account($this);
+
+            case 'checkout':
+            case 'checkouts':
+                return new Checkout($this);
 
             case 'delivery':
             case 'deliveries':
