@@ -14,6 +14,7 @@ use OwenVoke\POAP\Api\Account;
 use OwenVoke\POAP\Api\Checkout;
 use OwenVoke\POAP\Api\Delivery;
 use OwenVoke\POAP\Api\Event;
+use OwenVoke\POAP\Api\Migration;
 use OwenVoke\POAP\Api\Queue;
 use OwenVoke\POAP\Api\Token;
 use OwenVoke\POAP\Api\Website;
@@ -32,6 +33,10 @@ use Psr\Http\Client\ClientInterface;
  * @method Delivery deliveries()
  * @method Event event()
  * @method Event events()
+ * @method Migration migrate()
+ * @method Migration migrates()
+ * @method Migration migration()
+ * @method Migration migrations()
  * @method Queue queue()
  * @method Queue queues()
  * @method Token token()
@@ -84,6 +89,12 @@ final class Client
             case 'event':
             case 'events':
                 return new Event($this);
+
+            case 'migrate':
+            case 'migrates':
+            case 'migration':
+            case 'migrations':
+                return new Migration($this);
 
             case 'queue':
             case 'queues':
