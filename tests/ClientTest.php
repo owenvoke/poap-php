@@ -6,6 +6,7 @@ use OwenVoke\POAP\Api\Account;
 use OwenVoke\POAP\Api\Checkout;
 use OwenVoke\POAP\Api\Delivery;
 use OwenVoke\POAP\Api\Event;
+use OwenVoke\POAP\Api\Migration;
 use OwenVoke\POAP\Api\Queue;
 use OwenVoke\POAP\Api\Token;
 use OwenVoke\POAP\Api\Website;
@@ -29,6 +30,12 @@ it('gets instances from the client', function () {
     // Retrieves Event instance
     expect($client->event())->toBeInstanceOf(Event::class);
     expect($client->events())->toBeInstanceOf(Event::class);
+
+    // Retrieves Migration instance
+    expect($client->migrate())->toBeInstanceOf(Migration::class);
+    expect($client->migrates())->toBeInstanceOf(Migration::class);
+    expect($client->migration())->toBeInstanceOf(Migration::class);
+    expect($client->migrations())->toBeInstanceOf(Migration::class);
 
     // Retrieves Queue instance
     expect($client->queue())->toBeInstanceOf(Queue::class);
