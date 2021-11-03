@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use OwenVoke\POAP\Api\Account;
+use OwenVoke\POAP\Api\Checkout;
 use OwenVoke\POAP\Api\Delivery;
 use OwenVoke\POAP\Api\Event;
 use OwenVoke\POAP\Api\Token;
@@ -15,6 +16,10 @@ it('gets instances from the client', function () {
     // Retrieves Account instance
     expect($client->account())->toBeInstanceOf(Account::class);
     expect($client->accounts())->toBeInstanceOf(Account::class);
+
+    // Retrieves Checkout instance
+    expect($client->checkout())->toBeInstanceOf(Checkout::class);
+    expect($client->checkouts())->toBeInstanceOf(Checkout::class);
 
     // Retrieves Delivery instance
     expect($client->delivery())->toBeInstanceOf(Delivery::class);
