@@ -11,6 +11,11 @@ class Account extends AbstractApi
         return $this->get("/actions/scan/{$addressOrEnsName}");
     }
 
+    public function ownsEventToken(string $addressOrEnsName, int $eventId): array
+    {
+        return $this->get("/actions/scan/{$addressOrEnsName}/{$eventId}");
+    }
+
     public function ensNameToAddress(string $ensName): array
     {
         return $this->get('/actions/ens_resolve', [

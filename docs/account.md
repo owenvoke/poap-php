@@ -12,6 +12,15 @@ $response = $client->account()->showByAddressOrEnsName(
 );
 ```
 
+### Check if an ETH address or ENS name owns a token for a specific event
+
+```php
+$response = $client->account()->ownsEventToken(
+    '0x3ab56c8a5e4b307a60b6a769b1c083ee165d6dd6',
+    123456
+);
+```
+
 ### Get an ETH address from an ENS name
 
 ```php
