@@ -6,6 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 ## Unreleased
 
+## [v1.3.0 - 2021-11-08](https://github.com/owenvoke/poap-php/compare/v1.2.1...v1.3.0)
+
+### Added
+- Add support for Checkout endpoints ([5dd16fd](https://github.com/owenvoke/poap-php/commit/5dd16fdba332f34939de77e56e4ef7bb02f79dc8))
+- Add support for Queue endpoints ([7a016d9](https://github.com/owenvoke/poap-php/commit/b7a016d9f22658e252c7aa04cd71934d37a693bf))
+- Add support for checking whether an account owns an event token ([5dd16fd](https://github.com/owenvoke/poap-php/commit/5dd16fdba332f34939de77e56e4ef7bb02f79dc8))
+- Add support for Migration endpoints ([e5211ca](https://github.com/owenvoke/poap-php/commit/e5211cada54ed8482f7668bca849119643fa37d0))
+
+### Changed
+- Revert `e8c2508` and use `Bearer` identifier for `Authorization` header ([593d2d8](https://github.com/owenvoke/poap-php/commit/593d2d883553a7e88858df82e90f2443777850b6))
+
 ## [v1.2.1 - 2021-11-02](https://github.com/owenvoke/poap-php/compare/v1.2.0...v1.2.1)
 
 ### Changed
