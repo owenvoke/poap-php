@@ -45,11 +45,11 @@ class Token extends AbstractApi
             'qr_hash' => $code,
         ]);
 
-        if (!isset($response['secret'], $response['claimed'], $response['is_active'])) {
+        if (! isset($response['secret'], $response['claimed'], $response['is_active'])) {
             throw new InvalidArgumentException('The required response values could not be found');
         }
 
-        if (!$response['secret']) {
+        if (! $response['secret']) {
             throw new InvalidArgumentException('A secret could not be retrieved from the provided code');
         }
 
@@ -57,7 +57,7 @@ class Token extends AbstractApi
             throw new InvalidArgumentException('The provided code has already been claimed');
         }
 
-        if (!$response['is_active']) {
+        if (! $response['is_active']) {
             throw new InvalidArgumentException('The provided code is no longer active');
         }
 
