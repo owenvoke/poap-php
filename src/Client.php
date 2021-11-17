@@ -55,7 +55,7 @@ final class Client
         $this->httpClientBuilder = $builder = $httpClientBuilder ?? new Builder();
 
         $builder->addPlugin(new RedirectPlugin());
-        $builder->addPlugin(new AddHostPlugin(Psr17FactoryDiscovery::findUriFactory()->createUri('https://api.poap.xyz')));
+        $builder->addPlugin(new AddHostPlugin(Psr17FactoryDiscovery::findUriFactory()->createUri('https://api.poap.tech')));
         $builder->addPlugin(new HeaderDefaultsPlugin([
             'User-Agent' => 'poap-php (https://github.com/owenvoke/poap-php)',
         ]));
