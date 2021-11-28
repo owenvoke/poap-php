@@ -31,6 +31,13 @@ class Event extends AbstractApi
         ]);
     }
 
+    public function codes(int $id, string $secretCode): array
+    {
+        return $this->post("/event/{$id}/qr-codes", [
+            'secret_code' => $secretCode,
+        ]);
+    }
+
     public function create(
         string $name,
         string $image,

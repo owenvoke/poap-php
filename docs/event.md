@@ -28,6 +28,12 @@ $response = $client->event()->showBySlug('pest-php-meetup-1-2021');
 $response = $client->event()->validate(7811, '123456');
 ```
 
+### Retrieve the codes for an event
+
+```php
+$response = $client->event()->codes(7811, '123456');
+```
+
 ### Create a new event
 
 ```php
