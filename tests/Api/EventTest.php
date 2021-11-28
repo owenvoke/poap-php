@@ -86,3 +86,16 @@ it('should validate an events secret code', function () {
 
     expect($api->validate(7811, '123456'))->toBe(['valid' => true]);
 });
+
+it('should retrieve an events codes', function () {
+    $api = $this->getApiMock();
+
+    $api->expects($this->once())
+        ->method('post')
+        ->with('/event/7811/qr-codes', [
+            'secret_code' => '123456',
+        ])
+        ->willReturn(['valid' => true]);
+
+    expect($api->codes(7811, '123456'))->toBe(['valid' => true]);
+});
