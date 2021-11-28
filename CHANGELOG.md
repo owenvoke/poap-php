@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 ## Unreleased
 
+## [v1.4.0 - 2021-11-28](https://github.com/owenvoke/poap-php/compare/v1.3.0...v1.4.0)
+
+### Added
+- Add support for receiving Event codes ([6d5fc1b](https://github.com/owenvoke/poap-php/commit/6d5fc1b9a92b22064a8d1c83cb3b10d5e7c5ec6d))
+
+### Changed
+- Update the POAP API base URI ([fbf7632](https://github.com/owenvoke/poap-php/commit/fbf76322d244f063c71c045f54df5b98567a4d23))
+
 ## [v1.3.0 - 2021-11-08](https://github.com/owenvoke/poap-php/compare/v1.2.1...v1.3.0)
 
 ### Added
