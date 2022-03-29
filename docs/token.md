@@ -38,3 +38,11 @@ $response = $client->token()->claimSecret(
     'abcdef'
 );
 ```
+
+### Get the status of a POAP token code
+
+```php
+$response = $client->token()->claimStatus(
+    'abcdef'
+);
+```
