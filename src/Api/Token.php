@@ -62,7 +62,7 @@ class Token extends AbstractApi
         return $response['secret'];
     }
 
-    public function claimStatus(string $code): string
+    public function claimStatus(string $code): array
     {
         return $this->get('/actions/claim-qr', [
             'qr_hash' => $code,
