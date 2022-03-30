@@ -41,9 +41,7 @@ class Token extends AbstractApi
 
     public function claimSecret(string $code): string
     {
-        $response = $this->get('/actions/claim-qr', [
-            'qr_hash' => $code,
-        ]);
+        $response = $this->claimStatus($code);
 
         if (! isset($response['secret'], $response['claimed'], $response['is_active'])) {
             throw new InvalidArgumentException('The required response values could not be found');
@@ -62,5 +60,12 @@ class Token extends AbstractApi
         }
 
         return $response['secret'];
+    }
+
+    public function claimStatus(string $code): array
+    {
+        return $this->get('/actions/claim-qr', [
+            'qr_hash' => $code,
+        ]);
     }
 }
