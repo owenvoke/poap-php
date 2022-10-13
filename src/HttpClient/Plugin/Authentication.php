@@ -14,7 +14,9 @@ final class Authentication implements Plugin
     use VersionBridgePlugin;
 
     private string $tokenOrLogin;
+
     private ?string $password;
+
     private ?string $method;
 
     /**

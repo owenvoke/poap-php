@@ -15,7 +15,7 @@ abstract class AbstractApi
     /** The per page parameter. */
     protected ?int $perPage = null;
 
-    /** @param Client $client */
+    /** @param  Client  $client */
     public function __construct(Client $client)
     {
         $this->client = $client;

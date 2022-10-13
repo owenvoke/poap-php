@@ -33,7 +33,7 @@ it('claim get a website', function () {
         ->method('get')
         ->with('/website/claim', [
             'website' => 'test-website',
-            'address' => '0x3ab56c8a5E4B307A60b6A769B1C083EE165d6dd6'
+            'address' => '0x3ab56c8a5E4B307A60b6A769B1C083EE165d6dd6',
         ])
         ->willReturn($singleWebsiteData);
 

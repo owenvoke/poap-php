@@ -4,7 +4,7 @@
     "description": "An object-oriented PHP wrapper for the POAP API",
     "license": "MIT",
     "require": {
-        "php": "^7.4 || ^8.0",
+        "php": "^8.1",
         "php-http/client-common": "^2.4",
         "php-http/discovery": "^1.14",
         "php-http/httplug": "^2.2",
