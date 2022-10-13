@@ -19,5 +19,6 @@ it('should get a queued message by its id', function () {
         ->with('/queue-message/1ec3ece2-fb33-4668-b446-7369c43d9013')
         ->willReturn($expectedArray);
 
+    /** @var Queue $api */
     expect($api->show('1ec3ece2-fb33-4668-b446-7369c43d9013'))->toBe($expectedArray);
 });

@@ -52,6 +52,7 @@ it('should get a users POAPs by their ETH address or ENS name', function () use 
         ->with('/actions/scan/0x3ab56c8a5E4B307A60b6A769B1C083EE165d6dd6')
         ->willReturn($singleAccountData);
 
+    /** @var Account $api */
     expect($api->showByAddressOrEnsName('0x3ab56c8a5E4B307A60b6A769B1C083EE165d6dd6'))->toBe($singleAccountData);
 });
 
@@ -69,6 +70,7 @@ it('should check that an ETH address or ENS name owns a token for an event', fun
         ->with('/actions/scan/0x3ab56c8a5E4B307A60b6A769B1C083EE165d6dd6/123456')
         ->willReturn($expectedArray);
 
+    /** @var Account $api */
     expect($api->ownsEventToken('0x3ab56c8a5E4B307A60b6A769B1C083EE165d6dd6', 123456))->toBe($expectedArray);
 });
 
@@ -86,6 +88,7 @@ it('should get a users ETH address by their ENS name', function () {
             'ens' => 'voke.eth',
         ]);
 
+    /** @var Account $api */
     expect($api->ensNameToAddress('voke.eth'))->toBe([
         'valid' => true,
         'address' => '0x3ab56c8a5E4B307A60b6A769B1C083EE165d6dd6',
@@ -105,6 +108,7 @@ it('should get a users ENS name by their ETH address', function () {
             'ens' => 'voke.eth',
         ]);
 
+    /** @var Account $api */
     expect($api->addressToEnsName('0x3ab56c8a5E4B307A60b6A769B1C083EE165d6dd6'))->toBe([
         'valid' => true,
         'address' => '0x3ab56c8a5E4B307A60b6A769B1C083EE165d6dd6',

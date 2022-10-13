@@ -21,6 +21,7 @@ it('should get a token by its slug', function () {
         ->with('/checkouts/test-poap')
         ->willReturn($expectedArray);
 
+    /** @var Checkout $api */
     expect($api->show('test-poap'))->toBe($expectedArray);
 });
 
@@ -36,5 +37,6 @@ it('should redeem a checkout with a Google ReCaptcha response', function () {
         ->with('/checkouts/test-poap/redeem', ['gRecaptchaResponse' => 'testing'])
         ->willReturn($expectedArray);
 
+    /** @var Checkout $api */
     expect($api->redeem('test-poap', 'testing'))->toBe($expectedArray);
 });

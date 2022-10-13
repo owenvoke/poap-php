@@ -36,6 +36,7 @@ it('should get all deliveries', function () use ($singleDeliveryData) {
         ->with('/deliveries')
         ->willReturn($response);
 
+    /** @var Delivery $api */
     expect($api->all())->toBe($response);
 });
 
@@ -47,5 +48,6 @@ it('should get a delivery by its id', function () use ($singleDeliveryData) {
         ->with('/delivery/42')
         ->willReturn($singleDeliveryData);
 
+    /** @var Delivery $api */
     expect($api->show(42))->toBe($singleDeliveryData);
 });

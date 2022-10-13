@@ -19,5 +19,6 @@ it('should get a signature for migrating a POAP token from xDAI to ETH', functio
         ->with('/actions/migrate', ['tokenId' => 123456])
         ->willReturn($expectedArray);
 
+    /** @var Migration $api */
     expect($api->xDaiToEthereum(123456))->toBe($expectedArray);
 });

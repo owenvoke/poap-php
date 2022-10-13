@@ -53,6 +53,7 @@ it('should get a token by its id', function () use ($singleTokenData) {
         ->with('/token/1310287')
         ->willReturn($singleTokenData);
 
+    /** @var Token $api */
     expect($api->show(1310287))->toBe($singleTokenData);
 });
 
@@ -118,6 +119,7 @@ https://youtu.be/q_8kRlAIyms",
         ->with('/metadata/7811/1310287')
         ->willReturn($metadata);
 
+    /** @var Token $api */
     expect($api->metadata(7811, 1310287))->toBe($metadata);
 });
 
@@ -130,5 +132,6 @@ it('should get a tokens image', function () {
         ->with('/token/1310287/image')
         ->willReturn(base64_decode($image));
 
+    /** @var Token $api */
     expect(base64_encode($api->image(1310287)))->toBe($image);
 });
