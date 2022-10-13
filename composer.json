@@ -1,7 +1,7 @@
 {
     "name": "owenvoke/poap",
     "type": "library",
-    "description": "An object oriented PHP wrapper for the POAP API",
+    "description": "An object-oriented PHP wrapper for the POAP API",
     "license": "MIT",
     "require": {
         "php": "^7.4 || ^8.0",
@@ -17,6 +17,7 @@
         "guzzlehttp/guzzle": "^7.4",
         "guzzlehttp/psr7": "^2.1",
         "http-interop/http-factory-guzzle": "^1.2",
+        "laravel/pint": "^1.2",
         "pestphp/pest": "^1.20",
         "php-http/mock-client": "^1.5",
         "phpstan/phpstan": "^1.0",
