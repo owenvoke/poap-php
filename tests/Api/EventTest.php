@@ -45,9 +45,10 @@ it('should get all events', function () use ($singleEventData) {
 
     $api->expects($this->once())
         ->method('get')
-        ->with('/events')
-        ->willReturn([$singleEventData]);
+        ->with('/paginated-events')
+        ->willReturn(['items' => [$singleEventData]]);
 
+    /** @var Event $api */
     expect($api->all())->toBe([$singleEventData]);
 });
 
@@ -59,6 +60,7 @@ it('should get an event by its id', function () use ($singleEventData) {
         ->with('/events/id/7811')
         ->willReturn($singleEventData);
 
+    /** @var Event $api */
     expect($api->show(7811))->toBe($singleEventData);
 });
 
@@ -70,6 +72,7 @@ it('should get an event by its slug', function () use ($singleEventData) {
         ->with('/events/pest-php-meetup-1-2021')
         ->willReturn($singleEventData);
 
+    /** @var Event $api */
     expect($api->showBySlug('pest-php-meetup-1-2021'))->toBe($singleEventData);
 });
 
@@ -84,6 +87,7 @@ it('should validate an events secret code', function () {
         ])
         ->willReturn(['valid' => true]);
 
+    /** @var Event $api */
     expect($api->validate(7811, '123456'))->toBe(['valid' => true]);
 });
 
@@ -97,5 +101,6 @@ it('should retrieve an events codes', function () {
         ])
         ->willReturn(['valid' => true]);
 
+    /** @var Event $api */
     expect($api->codes(7811, '123456'))->toBe(['valid' => true]);
 });
