@@ -12,4 +12,12 @@ class Website extends AbstractApi
             'secret_code' => $secretCode,
         ]);
     }
+
+    public function claim(string $website, string $address): array
+    {
+        return $this->get('/website/claim', [
+            'website' => $website,
+            'address' => $address,
+        ]);
+    }
 }
