@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 ## Unreleased
 
+## [v1.5.1 - 2023-02-04](https://github.com/owenvoke/poap-php/compare/v1.5.0...v1.5.1)
+
+### Fixed
+- Resolve correct header for authentication ([#6](https://github.com/owenvoke/poap-php/pull/6))
+
 ## [v1.5.0 - 2022-03-30](https://github.com/owenvoke/poap-php/compare/v1.4.0...v1.5.0)
 
 ### Added
