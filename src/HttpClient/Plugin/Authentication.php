@@ -34,7 +34,7 @@ final class Authentication implements Plugin
     public function doHandleRequest(RequestInterface $request, callable $next, callable $first): Promise
     {
         $request = $request->withHeader(
-            'Authorization',
+            'X-API-Key',
             $this->getAuthorizationHeader()
         );
 
@@ -45,7 +45,7 @@ final class Authentication implements Plugin
     {
         switch ($this->method) {
             case Client::AUTH_ACCESS_TOKEN:
-                return sprintf('Bearer %s', $this->tokenOrLogin);
+                return $this->tokenOrLogin;
             default:
                 throw new RuntimeException(sprintf('%s not yet implemented', $this->method));
         }
