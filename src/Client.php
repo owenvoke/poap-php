@@ -113,13 +113,13 @@ final class Client
         }
     }
 
-    public function authenticate(string $tokenOrLogin, ?string $password = null, ?string $authMethod = null): void
+    public function authenticate(string $tokenOrLogin, string $password = null, string $authMethod = null): void
     {
-        if (null === $password && null === $authMethod) {
+        if ($password === null && $authMethod === null) {
             throw new InvalidArgumentException('You need to specify authentication method!');
         }
 
-        if (null === $authMethod && $password === self::AUTH_ACCESS_TOKEN) {
+        if ($authMethod === null && $password === self::AUTH_ACCESS_TOKEN) {
             $authMethod = $password;
             $password = null;
         }

@@ -17,10 +17,10 @@
         "guzzlehttp/guzzle": "^7.4",
         "guzzlehttp/psr7": "^2.1",
         "http-interop/http-factory-guzzle": "^1.2",
-        "laravel/pint": "^1.2",
+        "laravel/pint": "^1.13",
         "pestphp/pest": "^1.20",
         "php-http/mock-client": "^1.5",
-        "phpstan/phpstan": "^1.0",
+        "phpstan/phpstan": "^1.10",
         "symfony/var-dumper": "^5.3.8"
     },
     "autoload": {
@@ -44,7 +44,8 @@
     "config": {
         "sort-packages": true,
         "allow-plugins": {
-            "pestphp/pest-plugin": true
+            "pestphp/pest-plugin": true,
+            "php-http/discovery": true
         }
     },
     "minimum-stability": "dev",
